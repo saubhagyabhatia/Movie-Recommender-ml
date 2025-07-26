@@ -5,8 +5,10 @@ import requests
 st.markdown("## **🎬 Movie Recommender System**")
 
 movies = pickle.load(open('movie_list.pkl', 'rb'))
+import pickle
 import bz2
-with bz2.BZ2File('similarity_compressed.pbz2', 'rb') as f:
+
+with bz2.BZ2File("similarity_compressed.pbz2", "rb") as f:
     similarity = pickle.load(f)
 
 
