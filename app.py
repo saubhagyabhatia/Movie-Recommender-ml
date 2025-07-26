@@ -4,9 +4,8 @@ import requests
 
 st.markdown("## **🎬 Movie Recommender System**")
 
-movies = pickle.load(open(r'C:\Users\WIN 10\Desktop\Movie Recommender\movie_list.pkl','rb'))
-
-similarity = pickle.load(open(r'C:\Users\WIN 10\Desktop\Movie Recommender\similarity.pkl', 'rb'))
+movies = pickle.load(open('movie_list.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
