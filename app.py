@@ -5,7 +5,10 @@ import requests
 st.markdown("## **🎬 Movie Recommender System**")
 
 movies = pickle.load(open('movie_list.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+import bz2
+with bz2.BZ2File('similarity_compressed.pbz2', 'rb') as f:
+    similarity = pickle.load(f)
+
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
